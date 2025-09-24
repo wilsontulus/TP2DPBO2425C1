@@ -26,11 +26,11 @@ session_start();
 
 if (!isset($_SESSION['listProduk'])) {
     $_SESSION['listProduk'] = array();
-    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "HP Omen Gaming", "Laptop gaming pemula", "HP_Omen.png", "Laptop", "Portable", "HP", 700, 8, "Resmi");
-    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "Lenovo ThinkPad Yoga", "Laptop mahasiswa terbaik", "ThinkpadYoga.png", "Laptop", "Portable", "Lenovo", 1800, 5, "Distributor" );
-    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "Dell Optiplex AIO 9020", "PC tinggal pasang langsung beres", "OptiplexAIO.png", "AIO PC", "Desktop", "Dell", 1800, 15, "Distributor");
-    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "Samsung Galaxy Tab 11", "Tablet ternyaman di tangan mahasiswa", "GalaxyTab11.png", "Tablet", "Portable", "Samsung", 2500, 15, "Resmi");
-    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "ESP32-H2", "Komponen IoT termurah", "ESP32H2.png", "Microcontroller", "Embedded", "Espressif", 3, 100, "Toko");
+    $_SESSION['listProduk'][] = new Produk()->create(count($_SESSION['listProduk'])+1, "HP Omen Gaming", "Laptop gaming pemula", "HP_Omen.png", "Laptop", "Portable", "HP", 700, 8, "Resmi");
+    $_SESSION['listProduk'][] = new Produk()->create(count($_SESSION['listProduk'])+1, "Lenovo ThinkPad Yoga", "Laptop mahasiswa terbaik", "ThinkpadYoga.png", "Laptop", "Portable", "Lenovo", 1800, 5, "Distributor" );
+    $_SESSION['listProduk'][] = new Produk()->create(count($_SESSION['listProduk'])+1, "Dell Optiplex AIO 9020", "PC tinggal pasang langsung beres", "OptiplexAIO.png", "AIO PC", "Desktop", "Dell", 1800, 15, "Distributor");
+    $_SESSION['listProduk'][] = new Produk()->create(count($_SESSION['listProduk'])+1, "Samsung Galaxy Tab 11", "Tablet ternyaman di tangan mahasiswa", "GalaxyTab11.png", "Tablet", "Portable", "Samsung", 2500, 15, "Resmi");
+    $_SESSION['listProduk'][] = new Produk()->create(count($_SESSION['listProduk'])+1, "ESP32-H2", "Komponen IoT termurah", "ESP32H2.png", "Microcontroller", "Embedded", "Espressif", 3, 100, "Toko");
 }
 
 /* Buat variabel untuk sesi berupa list produk */
@@ -112,6 +112,46 @@ if (isset($_POST['submit'])) {
             <header>
                 <h1> List barang yang tercatat </h1>
             </header>
+
+            <table class="products-list">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Deskripsi</th>
+                        <th>Tipe</th>
+                        <th>Target Instalasi</th>
+                        <th>Merek</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th>Garansi</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php if (count($listProduk) <= 0) {?>
+                        <tr>
+                            <td colspan="10" style="text-align: center;">List produk tidak tersedia.</td>
+                        </tr>
+                    <?php } else { ?>
+                        <?php foreach($listProduk as $produk) { ?>
+                            <tr>
+                            <th><?php echo $produk->getId(); ?></th>
+                            <th><?php echo $produk->getNama(); ?></th>
+                            <th><?php echo $produk->getDeskripsi(); ?></th>
+                            <th><?php echo $produk->getTipe(); ?></th>
+                            <th><?php echo $produk->getTargetInstalasi(); ?></th>
+                            <th><?php echo $produk->getMerek(); ?></th>
+                            <th><?php echo $produk->getHarga(); ?></th>
+                            <th><?php echo $produk->getStok(); ?></th>
+                            <th><?php echo $produk->getGaransi(); ?></th>
+                            <th><img src="images/<?php echo $produk->getFoto(); ?>" alt="<?php echo $produk->getNama(); ?>" width="40"></th>
+                            </tr>
+                        <?php }?>
+                    <?php }?>
+                </tbody>
+            </table>
         </div>
 
         <div class="footer">

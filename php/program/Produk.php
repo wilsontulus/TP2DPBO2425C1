@@ -28,11 +28,11 @@ class Produk extends Tipe {
 
     // Fungsi setter untuk write atribut
 
-    public function setTipe($harga) {
+    public function setHarga($harga) {
         $this->harga = $harga;
     }
 
-    public function setTargetInstalasi($stok) {
+    public function setStok($stok) {
         $this->stok = $stok;
     }
 
@@ -44,7 +44,7 @@ class Produk extends Tipe {
 
     public function create($id, $nama, $deskripsi, $foto, $tipe, $target_instalasi, $merek, $harga, $stok, $garansi) {
         $this->setId($id);
-        $this->setNama($id);
+        $this->setNama($nama);
         $this->setDeskripsi($deskripsi);
         $this->setFoto($foto);
         $this->setTipe($tipe);

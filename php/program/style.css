@@ -58,6 +58,25 @@ footer {
   border-radius: 15%;
 }
 
+/* Tabel */
+.products-list {
+  padding: 4px;
+  background-color: #6090be;
+  border-radius: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  text-align: left;
+}
+
+.products-list thead {
+  font-size: 18px;
+}
+
+.products-list tbody {
+  font-size: 14px;
+}
+
 /* Semua berakhir di footer */
 
 .footer {
