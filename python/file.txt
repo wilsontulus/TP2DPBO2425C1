@@ -1,11 +1,23 @@
 1
-RaspberryPi5
-SingleboardcomputerTerbaik
+Raspberry Pi 5
+Single Board Computer terbaik
 SBC
 Embedded
 Raspberry
 50
 0
+Distributor
+2
+0
+
+1
+Eyegle Voxel 8
+HP paling ter-update versi droid-nya
+Smartphone
+Portable
+Eyegle
+950
+10
 Distributor
 2
 0

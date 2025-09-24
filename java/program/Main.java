@@ -94,6 +94,7 @@ public class Main {
 
                     System.out.printf("Masukkan stok produk: ");
                     tempStock = input.nextInt();
+                    input.nextLine();
 
                     System.out.printf("Masukkan metode garansi produk: ");
                     tempWarrantyMethod = input.nextLine();

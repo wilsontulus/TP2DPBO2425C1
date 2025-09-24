@@ -1,3 +1,5 @@
+#!/bin/python3
+
 # LICENSE: All Rights Reserved
 # (c) 2025 Willsoon Tulus P. Simanjuntak
 # (c) 2025 Universitas Pendidikan Indonesia
