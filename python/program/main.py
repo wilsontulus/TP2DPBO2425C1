@@ -109,7 +109,6 @@ def main():
                     # Tampilkan isi header tabel
                     print("| ", end="")
                     for i in range(0, 9):
-                        # System.out.printf(tableColumnStr[i] + " ".repeat(tableColumnLengths[i] - tableColumnStr[i].length()) + " | ")
                         print(tableColumnStr[i], end="")
                         print(" "*(tableColumnLengths[i] - len(tableColumnStr[i])), end="")
                         print(" | ", end="")
@@ -141,6 +140,7 @@ def main():
                         print(str(produk.getStok()) + " "*(tableColumnLengths[7] - len(str(produk.getStok()))) + " | ", end="")
                         print(produk.getGaransi() + " "*(tableColumnLengths[8] - len(produk.getGaransi())) + " | ", end="")
 
+                        # Cetak newline
                         print("")
 
                     # Tampilkan footer tabel

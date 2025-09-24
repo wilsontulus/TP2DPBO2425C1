@@ -12,7 +12,6 @@
 
 /* Deklarasi file header custom */
 #include "header.hpp"
-#include <string>
 
 /* Main driver */
 
@@ -70,6 +69,7 @@ int main() {
         switch(choiceNum) {
             case 1: // Tambah data baru.
                 // Untuk nama dan deskripsi, getline digunakan untuk menerima spasi
+                // cin.ignore() digunakan sebelum getline untuk mencegah double newline di beberapa sistem.
 
                 // Kelas "Barang"
                 cout << "Masukkan nama produk: ";
@@ -108,7 +108,6 @@ int main() {
 
                 // Tampilkan bahwa proses penambahan produk baru sudah selesai
                 cout << "Sukses menambahkan produk dengan ID " << listProduk.size() << endl;
-
                 break;
             case 2: // Tampilkan seluruh list produk yang tersedia di listProduk
                 if (listProduk.empty() == true) {

@@ -130,6 +130,7 @@ if (isset($_POST['submit'])) {
                 </thead>
 
                 <tbody>
+                    <!-- Beritahu jika list tabel kosong -->
                     <?php if (count($listProduk) <= 0) {?>
                         <tr>
                             <td colspan="10" style="text-align: center;">List produk tidak tersedia.</td>

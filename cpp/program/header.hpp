@@ -12,7 +12,6 @@
 
 /* Deklarasi header */
 #include <bits/stdc++.h>
-#include <string>
 
 /* Deklarasi tipe namespace */
 
