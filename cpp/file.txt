@@ -1,3 +1,4 @@
+2
 1
 Raspberry Pi 5
 Single Board Computer terbaik
@@ -8,7 +9,6 @@ Raspberry
 0
 Distributor
 2
-0
 
 1
 Eyegle Voxel 8
@@ -20,4 +20,3 @@ Eyegle
 10
 Distributor
 2
-0

@@ -1,23 +1,22 @@
+2
 1
-Raspberry Pi 5
+Raspberry Pi 5+
 Single Board Computer terbaik
 SBC
 Embedded
 Raspberry
-50
+55
 0
 Distributor
 2
-0
 
 1
-Eyegle Voxel 8
-HP paling ter-update versi droid-nya
+Eyegle Voxel 9a
+HP paling terupdate spek nya
 Smartphone
 Portable
 Eyegle
-950
+960
 10
 Distributor
 2
-0

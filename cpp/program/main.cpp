@@ -69,7 +69,7 @@ int main() {
         switch(choiceNum) {
             case 1: // Tambah data baru.
                 // Untuk nama dan deskripsi, getline digunakan untuk menerima spasi
-                // cin.ignore() digunakan sebelum getline untuk mencegah double newline di beberapa sistem.
+                // cin.ignore() digunakan sebelum getline pertama untuk mencegah double newline di beberapa sistem.
 
                 // Kelas "Barang"
                 cout << "Masukkan nama produk: ";
@@ -77,7 +77,6 @@ int main() {
                 getline(cin, tempName);
 
                 cout << "Masukkan deskripsi produk: ";
-                cin.ignore();
                 getline(cin, tempDesc);
 
                 // Kelas "Tipe"
