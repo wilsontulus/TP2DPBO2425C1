@@ -60,6 +60,8 @@ Untuk C++, Java, dan Python, menggunakan CLI dan memiliki tampilan antarmuka yan
 Terdapat ketentuan operasional untuk versi CLI:
 
 - Tidak ada batasan yang ditentukan mengenai seberapa banyaknya produk yang bisa ditambahkan.
+- Untuk C++, atribut Nama dan Deskripsi dapat diisi baik dengan spasi namun tanpa spasi. Untuk Java dan Python, seluruh atribut string dapat diisi dengan atau tanpa spasi.
+- Untuk Java dan Python, inputan angka memiliki error handling jika memasukkan huruf dalam inputan angka.
 
 Untuk PHP, menggunakan Web GUI dan memiliki tampilan antarmuka berupa tabel. Data disimpan dalam satu sesi saja mengunakan $_SESSION dan tidak menggunakan sistem manajemen basis data seperti MariaDB dan sejenisnya.
 
