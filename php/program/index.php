@@ -22,6 +22,61 @@ require('Produk.php');
 
 session_start();
 
+/* Buat data dummy terlebih dahulu jika belum ter-inisialisasi */
+
+if (!isset($_SESSION['listProduk'])) {
+    $_SESSION['listProduk'] = array();
+    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "HP Omen Gaming", "Laptop gaming pemula", "HP_Omen.png", "Laptop", "Portable", "HP", 700, 8, "Resmi");
+    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "Lenovo ThinkPad Yoga", "Laptop mahasiswa terbaik", "ThinkpadYoga.png", "Laptop", "Portable", "Lenovo", 1800, 5, "Distributor" );
+    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "Dell Optiplex AIO 9020", "PC tinggal pasang langsung beres", "OptiplexAIO.png", "AIO PC", "Desktop", "Dell", 1800, 15, "Distributor");
+    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "Samsung Galaxy Tab 11", "Tablet ternyaman di tangan mahasiswa", "GalaxyTab11.png", "Tablet", "Portable", "Samsung", 2500, 15, "Resmi");
+    $_SESSION['listProduk'] = new Produk()->create(count($_SESSION['listProduk'])+1, "ESP32-H2", "Komponen IoT termurah", "ESP32H2.png", "Microcontroller", "Embedded", "Espressif", 3, 100, "Toko");
+}
+
+/* Buat variabel untuk sesi berupa list produk */
+
+$listProduk = $_SESSION['listProduk'];
+
+/* Buat folder gambar dengan permission rwxrwxr-x jika belum tersedia */
+
+if (!is_dir("images")) {
+    mkdir("images", 0775, true);
+}
+
+/* Buat fungsi untuk menambahkan produk */
+
+if (isset($_POST['submit'])) {
+    // Kelas Barang
+    $nama = $_POST['nama'];
+    $deskripsi = $_POST['deskripsi'];
+    $foto  = $_FILES['foto'];
+
+    // Kelas Tipe
+    $tipe = $_POST['tipe'];
+    $target_instalasi = $_POST['target_instalasi'];
+    $merek = $_POST['merek'];
+
+    // Kelas Produk
+    $harga = $_POST['harga'];
+    $stok = $_POST['stok'];
+    $garansi = $_POST['garansi'];
+
+    // Proses file foto
+    $direktori_foto = "images/" . basename($photo['name']);
+
+    // Upload foto ke server
+    move_uploaded_file($photo['tmp_name'], $direktori_foto);
+
+    // Buat variabel sementara untuk objek Produk
+    $tempBarang = new Produk()->create(count($listProduk)+1, $nama, $deskripsi, $foto, $tipe, $target_instalasi, $merek, $harga, $stok, $garansi);
+
+    // Masukkan ke list produk
+    $listProduk[] = $tempBarang;
+
+    // Ubah list sesi menjadi list final setelah perubahan
+    $_SESSION['listProduk'] = $listProduk;
+}
+
 ?>
 
 <!DOCTYPE html>

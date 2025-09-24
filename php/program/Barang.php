@@ -19,6 +19,7 @@ class Barang{
     private $id = -1;
     private $nama = "";
     private $deskripsi = "";
+    private $foto = "";
 
     public function __construct() {
         $this->id = -1;
@@ -40,6 +41,10 @@ class Barang{
         $this->deskripsi = $deskripsi;
     }
 
+    public function setFoto($foto) {
+        $this->foto = $foto;
+    }
+
     // Fungsi getter untuk read atribut
 
     public function getId() {
@@ -52,6 +57,10 @@ class Barang{
 
     public function getDeskripsi() {
         return $this->deskripsi;
+    }
+
+    public function getFoto() {
+        return $this->foto;
     }
 }
 

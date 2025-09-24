@@ -42,10 +42,11 @@ class Produk extends Tipe {
 
     // Fungsi setter/getter untuk objek baru
 
-    public function create($id, $nama, $deskripsi, $tipe, $target_instalasi, $merek, $harga, $stok, $garansi) {
+    public function create($id, $nama, $deskripsi, $foto, $tipe, $target_instalasi, $merek, $harga, $stok, $garansi) {
         $this->setId($id);
         $this->setNama($id);
         $this->setDeskripsi($deskripsi);
+        $this->setFoto($foto);
         $this->setTipe($tipe);
         $this->setTargetInstalasi($target_instalasi);
         $this->setMerek($merek);
